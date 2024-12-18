@@ -1,0 +1,1199 @@
+<div class='sheet-maindiv'>
+    <label class="sheet-name">Name:</label>
+    <input type="text" name="attr_name"/>
+
+    <input type='checkbox' name='attr_lock_class' class='sheet-lock'>
+    <label class="sheet-lock"><small>Lock/Unlock Class</small></label><br/>
+    <label class="sheet-name">Class:</label>
+    <input type='checkbox' name='attr_lock_class' class='sheet-lock' style="display: none;">
+    <div class="sheet-classSelected" style=" width: 100%; padding-left: 20px;">
+    	<input type='checkbox' name='attr_lock_class' class='sheet-lock' style="display: none;">
+	   <input type="checkbox" name="attr_class" class="sheet-class" value='The Aware'/><label>The Aware </label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Fae'/><label>The Fae </label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Hunter'/><label>The Hunter</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Imp'/><label>The Imp</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Oracle'/><label>The Oracle</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Spectre'/><label>The Spectre</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Sworn'/><label>The Sworn</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Tainted'/><label>The Tainted</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Vamp'/><label>The Vamp</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Veteran'/><label>The Veteran</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Wizard'/><label>The Wizard</label>
+		<input type="checkbox" name="attr_class" class="sheet-class" value='The Wolf'/><label>The Wolf</label>
+
+    </div>
+    <div class="sheet-2colrow" style="padding-left: 20px;">
+    	<input type='checkbox' name='attr_lock_class' class='sheet-lock' style="display: none;">
+    	<div class="sheet-col sheet-classcol" style="width: 120px;">
+
+        <strong>Base Playbooks</strong><br>
+    		<input type='checkbox' name='attr_lock_class' class='sheet-lock' style="display: none;">
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Aware' /><label style="width: 70%;">The Aware</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Fae'/><label style="width: 70%;">The Fae</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Hunter'/><label style="width: 70%;">The Hunter</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Imp'/><label style="width: 70%;">The Imp</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Oracle'/><label style="width: 70%;">The Oracle</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Spectre'/><label style="width: 70%;">The Spectre</label>
+		</div>
+		<div class="sheet-col sheet-classcol" style="width: 120px;">
+			<input type='checkbox' name='attr_lock_class' class='sheet-lock' style="display: none;">
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Tainted'/><label style="width: 70%;">The Sworn</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Sworn'/><label style="width: 70%;">The Tainted</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Vamp'/><label style="width: 70%;">The Vamp</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Veteran'/><label style="width: 70%;">The Veteran</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Wizard'/><label style="width: 70%;">The Wizard</label>
+			<input type="checkbox" name="attr_class" class="sheet-class" value='The Wolf'/><label style="width: 70%;">The Wolf</label>
+		</div>
+	</div>
+	
+
+    <div class="sheet-3colrow">
+    <!--<div class="sheet-row">
+    <div class="sheet-col" style="width: 33%;">-->
+        <div class="sheet-col odd">
+        	<div class="sheet-box">
+        		<label class="sheet-class-moves sheet-section-title">Look</label><br>
+        		<textarea name="attr_look"></textarea>
+        	</div>
+        	<label class="sheet-class-moves sheet-section-title">Stats:</label>
+        	<div class="sheet-attr-box">
+				<label class="sheet-blood sheet-name">Blood:</label>
+				<input type="text" name="attr_blood"/>
+				<div class="sheet-roll-box sheet-cf">
+				<label class="sheet-buttonLbl">Turn to Violence:</label>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Turn to Violence}} {{roll_mod=[[@{blood} - @{shattered}]]}} {{result=[[2d6 + @{blood} - @{shattered}]]}} {{advanced=@{advanced1}}}' name='roll_violence'></button><small>Advanced?</small> <select name="attr_advanced1"><option value="">No</option><option value=", Advanced">Yes</option></select><br>
+				<label class="sheet-buttonLbl">Escape a Situation:</label>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Escape a Situation}} {{roll_mod=[[@{blood} - @{shattered}]]}} {{result=[[2d6 + @{blood} - @{shattered}]]}} {{advanced=@{advanced2}}}' name='roll_escape'></button><small>Advanced?</small><select name="attr_advanced2"><option value="">No</option><option value=", Advanced">Yes</option></select>
+				</div>
+        	</div>
+        	<div class="sheet-attr-box">
+				<label class="sheet-heart sheet-name">Heart:</label>
+				<input type="text" name="attr_heart"/>
+				<div class="sheet-roll-box sheet-cf">
+				<label class="sheet-buttonLbl">Persuade an NPC:</label>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Persuade an NPC}} {{roll_mod=[[@{heart} - @{disfigured}]]}} {{result=[[2d6 + @{heart} - @{disfigured}]]}} {{advanced=@{advanced3}}}' name='roll_persuade' ></button><small>Advanced?</small><select name="attr_advanced3"><option value="">No</option><option value=", Advanced">Yes</option></select>
+				<label class="sheet-buttonLbl">Refuse to Honor a Debt</label>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Refuse to Honor a Debt}} {{roll_mod=[[@{heart}-@{disfigured}]]}} {{result=[[2d6 + @{heart}-@{disfigured}]]}}' name='roll_move'></button>
+				</div>
+        	</div>
+
+        	<div class="sheet-attr-box">
+				<label class="sheet-mind sheet-name">Mind:</label>
+				<input type="text" name="attr_mind"/>
+				<div class="sheet-roll-box sheet-cf">
+				<label class="sheet-buttonLbl">Figure Someone Out:</label><br>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Figure Someone Out}} {{roll_mod=[[@{mind} - @{fractured}]]}} {{result=[[2d6 + @{mind} - @{fractured}]]}} {{advanced=@{advanced4}}}' name='roll_figureout' ></button><small>Advanced?</small><select name="attr_advanced4"><option value="">No</option><option value=", Advanced">Yes</option></select><br>
+				<label class="sheet-buttonLbl">Mislead, Distract, or Trick:</label><br>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Mislead, Distract, or Trick}} {{roll_mod=[[@{mind} - @{fractured}]]}} {{result=[[2d6 + @{mind} - @{fractured}]]}} {{advanced=@{advanced5}}}' name='roll_mdt' ></button><small>Advanced?</small><select name="attr_advanced5"><option value="">No</option><option value=", Advanced">Yes</option></select>
+				</div>
+        	</div>
+
+			<div class="sheet-attr-box">
+				<label class="sheet-spirit sheet-name">Spirit:</label>
+				<input type="text" name="attr_spirit"/>
+				<div class="sheet-roll-box sheet-cf">
+				<label class="sheet-buttonLbl">Keep Your Cool:</label><br>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Keep Your Cool}} {{roll_mod=[[@{spirit} - @{broken}]]}} {{result=[[2d6 + @{spirit} - @{broken}]]}} {{advanced=@{advanced6}}}' name='roll_keepcool' ></button><small>Advanced?</small><select name="attr_advanced6"><option value="">No</option><option value=", Advanced">Yes</option></select><br>
+				<label class="sheet-buttonLbl">Let It Out:</label>
+				<button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Let It Out}} {{roll_mod=[[@{spirit} - @{broken}]]}} {{result=[[2d6 + @{spirit} - @{broken}]]}} {{advanced=@{advanced7}}}' name='roll_keepcool' ></button><small>Advanced?</small><select name="attr_advanced7"><option value="">No</option><option value=", Advanced">Yes</option></select>
+				</div>
+			</div>
+
+
+        	<div class="sheet-box">
+				<label class="sheet-improvements sheet-section-title">Improvements:</label>
+				<input type='checkbox' name='attr_sheet-show_improvements' class='sheet-showhide'/>
+				<label class="sheet-showhide"><small>Show/Hide Improvements</small></label><br/>
+
+				<div class="sheet-subbox">
+					<!-- Class Selected -->
+					<input type="checkbox" name="attr_class" class="sheet-isaware" value='The Aware' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isfae" value='The Fae' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-ishunter" value='The Hunter' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isimp" value='The Imp' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isoracle" value='The Oracle' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isspectre" value='The Spectre' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-issworn" value='The Sworn' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-istainted" value='The Tainted' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isvamp" value='The Vamp' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isveteran" value='The Veteran' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-iswizard" value='The Wizard' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-iswolf" value='The Wolf' style="display: none;" />
+
+					<!-- End Class Selected -->
+					
+
+					<div class="sheet-aware">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-4" /> a new Aware move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-5" /> a new Aware move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-8" /> open a new mortal relationship</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-12" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-13" /> change your Circle</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-15" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_aware-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-fae">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-4" /> a new Fae move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-5" /> a new Fae move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-12" /> aquire a knightly title</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_fae-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-hunter">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-4" /> a new Hunter move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-5" /> a new Hunter move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-12" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-13" /> get a <i>workshop</i></label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-15" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_hunter-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-imp">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-4" /> a new Imp move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-5" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-7" /> change your Circle</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-11" /> +1 to any Circle (max+3)</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-12" /> obtain Circle Status-2</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-15" /> get <i>The Devil Inside</i></label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_imp-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-oracle">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-4" /> a new Oracle move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-5" /> a new Oracle move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-12" /> get a <i>sanctum</i></label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_oracle-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>							
+							
+						</ul>
+					</div>
+					<div class="sheet-spectre">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-4" /> a new Spectre move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-5" /> a new Spectre move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-12" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-15" /> resolve one of your anchors</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_spectre-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-sworn">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-4" /> a new Sworn move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-5" /> a new Sworn move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-8" /> obtain Power Status-2</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-11" /> +1 to any Circle (max+3)</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-12" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_sworn-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>					
+					<div class="sheet-tainted">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-4" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-5" /> a new Tainted move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-12" /> gain <i>Fiendish Underlings</i></label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-13" /> erase a job from your contract</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-15" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_tainted-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-vamp">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-4" /> a new Vamp move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-5" /> a new Vamp move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-12" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_vamp-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-veteran">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-4" /> a new Veteran move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-5" /> a new Veteran move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-6" /> obtain Mortalis Status-2</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-11" /> erase a scar</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-12" /> add 2 resources to your workshop</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_veteran-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-wizard">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-4" /> add 2 resources to your sanctum</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-5" /> learn 3 more spells</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-6" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-11" /> obtain Circle Status-2</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-12" /> bond with a familiar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-13" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-14" /> advance 3 basic moves</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wizard-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+					<div class="sheet-wolf">
+						<ul>
+							<b>Advances available at beginning of play:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-1" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-2" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-3" /> +1 Status (max+1)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-4" /> a new Wolf move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-5" /> a new Wolf move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-6" /> join or lead a wolf pack</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-7" /> a move from another playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-8" /> change your Circle</label></li>
+							<b>After 5 advances you may select:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-9" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-10" /> +1 to any Circle (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-11" /> advance 4 basic moves</label></li>							
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-12" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-13" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-14" /> erase a scar</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-15" /> retire your character to safety</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_wolf-improvement-16" /> change to a new playbook</label></li>
+							<b>Corruption Advances:</b>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance1"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance2"/> take +1 to any stat (max+3)</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance3"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance4"/> take a new corruption move</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance5"/> take a new corruption move from another or your own playbook</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruptadvance6"/> retire your character; they may return as a Threat</label></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+        <!--</div>-->
+        <div class="sheet-col even">
+        	<div class="sheet-box">
+        	<label class="sheet-class-moves sheet-section-title">Demeanor</label>
+        		<input type="text" name="attr_demeanor"/>
+        		<label class="sheet-section-title">Drama Moves</label>
+        		<div class="sheet-subbox">
+					<!-- Class Selected -->
+					<input type="checkbox" name="attr_class" class="sheet-isaware" value='The Aware' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isfae" value='The Fae' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-ishunter" value='The Hunter' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isimp" value='The Imp' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isoracle" value='The Oracle' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isspectre" value='The Spectre' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-issworn" value='The Sworn' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-istainted" value='The Tainted' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isvamp" value='The Vamp' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-isveteran" value='The Veteran' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-iswizard" value='The Wizard' style="display: none;" />
+					<input type="checkbox" name="attr_class" class="sheet-iswolf" value='The Wolf' style="display: none;" />
+
+					<!-- End Class Selected -->
+
+					<div class="sheet-aware">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you ignore your mortal responsibilities to deal with the supernatural, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with someone new who isn’t mortal, mark corruption. 
+							When you <i>figure out someone</i> you’ve previously shared a moment of intimacy with, roll with HEART instead of MIND.</li>
+							<li><b><br>End Move</b><br>When you die, ask another PC to look after up to three of your <i>mortal relationships</i>. 
+							If they agree, they immediately advance. If they refuse, they take a corruption advance instead.</li>
+						</ul>
+					</div>
+					<div class="sheet-fae">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you break a promise or tell an outright lie, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, demand a promise from them. 
+							If they refuse you or break the promise, they owe you a Debt.</li>
+							<li><b><br>End Move</b><br>When you die or retire your character, bestow the favor of your court upon someone. 
+							They can take <i>Faerie Magic</i> and two of your faerie powers or advance <i>persuade an NPC</i>.</li>
+						</ul>
+					</div>
+					<div class="sheet-hunter">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you injure or greatly endanger an innocent bystander, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy -physical or emotional- with another person, ask them a question; they must answer it honestly. They will ask you a
+							question in return; answer it honestly or mark corruption.</li>
+							<li><b><br>End Move</b><br>When you die, give another PC one of your custom weapons and one of your Hunter moves. Both are theirs for keeps.</li>
+						</ul>
+					</div>
+					<div class="sheet-imp">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you make a deal that endangers your family, friends, or community, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, promise to get them something they want without asking for anything in return; 
+							give them a Debt and take +1 ongoing to getting what you’ve promised them.</li>
+							<li><b><br>End Move</b><br>When you die, one of your schemes comes to fruition, but someone else reaps the rewards. 
+							Choose someone to benefit from the plans you put in motion; select a payout for them.</li>
+						</ul>
+					</div>
+					<div class="sheet-oracle">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you offer a false prophecy or lie about the details of a true one, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, you gain a specific and clear vision about that person’s future. 
+							Mark corruption to ask the MC up to two follow-up questions; they must answer honestly.</li>
+							<li><b><br>End Move</b><br>When you die or retire your character, choose a PC; the MC will tell you a dark fate you foresee for them. 
+							If you issue a warning, they take +1 ongoing to avoid it; if you don’t, they take -1 ongoing instead.</li>
+						</ul>
+					</div>
+					<div class="sheet-spectre">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you witness a scene of violence or victimization and do nothing, mark trauma and corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, you hold 1 and clear 1-trauma. Whenever they get into trouble, you can spend your hold to be there.</li>
+							<li><b><br>End Move</b><br>When your spirit passes on permanently to the other side, any PCs present gain +1 SPIRIT (max+3) or take a corruption advance, your choice.</li>
+						</ul>
+					</div>
+					<div class="sheet-sworn">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you break one of your vows or work against your masters, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, tell them if they matter more than your oath. 
+							If you say they do, mark corruption and they hold 1; they can spend the hold at any time to summon you to their location.</li>
+							<li><b><br>End Move</b><br>When you die, offer your legendary weapon to the person you trust the most. If they accept, bind them to three vows from your list as if they had sworn an oath to you.</li>
+						</ul>
+					</div>
+					<div class="sheet-tainted">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you convince someone to meaningfully act in your patron’s interests, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, they give you a Debt they hold on someone else.</li>
+							<li><b><br>End Move</b><br>When you die, cash in all the Debts your patron owes you to come back, healing all harm. 
+							If you have none, your patron asks someone else to pay the Debt for you. If they refuse, time’s up.</li>
+						</ul>
+					</div>
+					<div class="sheet-vamp">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you feed on an unwilling victim, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, tell them a secret about yourself or owe them a Debt. 
+							Either way, they enter your Web and owe you a Debt.</li>
+							<li><b><br>End Move</b><br>When you die, name the person you hold most responsible; your agents and allies relentlessly pursue them until “justice” is served.</li>
+						</ul>
+					</div>
+					<div class="sheet-veteran">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you knowingly head straight into danger, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, tell them a story about your time in the city and offer some advice. 
+							If they accept your counsel, hold 1. Spend the hold to give them a 10+ (instead of rolling) on a move they make while following your guidance. If they reject your wisdom, mark corruption.</li>
+							<li><b><br>End Move</b><br>When you die or retire your character, choose a character to inherit your <i>workshop</i>.</li>
+						</ul>
+					</div>
+					<div class="sheet-wizard">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you ignore a genuine plea for help from someone vulnerable, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, decide if you care about them. 
+							If you do, you form a sympathetic connection; you can target each other with magics at any range and intuitively know if the other is in danger. If you don’t, mark corruption.</li>
+							<li><b><br>End Move</b><br>When you die, you may place a devastating curse —a new prohibition or weakness— on someone present in the scene.</li>
+						</ul>
+					</div>
+					<div class="sheet-wolf">
+						<ul>
+							<li><b>Corruption Trigger</b><br>When you destroy a threat to your territory instead of driving it out, mark corruption.</li>
+							<li><b><br>Intimacy Move</b><br>When you share a moment of intimacy —physical or emotional— with another person, you create a primal bond with them until time passes; 
+							you both always know where to find each other and when the other is in trouble.</li>
+							<li><b><br>End Move</b><br>When you die, anyone in the scene you wish to protect escapes and reaches safety, no matter the odds.</li>
+						</ul>
+					</div>
+
+				</div>
+
+        	<label class="sheet-section-title">Circles</label>
+        	<div class="sheet-attr-box">
+				<label class="sheet-blood sheet-name">Mortalis:</label>
+				<input type="text" name="attr_mortalis"/>
+				<input type='checkbox' name='attr_bloodHighlighted' value='1' class='sheet-highlight'><label class='sheet-highlight'>Marked</label>
+
+        	</div>
+        	<div class="sheet-attr-box">
+				<label class="sheet-heart sheet-name">Night:</label>
+				<input type="text" name="attr_night"/>
+				<input type='checkbox' name='attr_heartHighlighted' value='1' class='sheet-highlight'><label class='sheet-highlight'>Marked</label>
+
+        	</div>
+
+        	<div class="sheet-attr-box">
+				<label class="sheet-mind sheet-name">Power:</label>
+				<input type="text" name="attr_power"/>
+				<input type='checkbox' name='attr_mindHighlighted' value='1' class='sheet-highlight'><label class='sheet-highlight'>Marked</label>
+
+        	</div>
+
+			<div class="sheet-attr-box">
+				<label class="sheet-spirit sheet-name">Wild:</label>
+				<input type="text" name="attr_wild"/>
+				<input type='checkbox' name='attr_spiritlHighlighted' value='1' class='sheet-highlight'><label class='sheet-highlight'>Marked</label>
+
+			</div>
+			<label class="sheet-stat">Roll:</label>
+			     <select name="attr_circleroll" class="sheet-moves">
+			          <option value="@{mortalis}">Mortalis</option>
+			          <option value="@{night}">Night</option>
+			          <option value="@{power}">Power</option>
+			          <option value="@{wild}">Wild</option>
+			      </select>
+				 <label class="sheet-buttonLbl">Put a Face to a Name:</label>
+				 <button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Put a Face to a Name}} {{roll_mod=[[@{circleroll}]]}} {{result=[[2d6 + @{circleroll}]]}}' name='roll_facename'></button>
+			     <label class="sheet-buttonLbl">Hit the Streets:</label>
+  			     <button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Hit the Streets}} {{roll_mod=[[@{circleroll}]]}} {{result=[[2d6 + @{circleroll}]]}}' name='roll_hitstreets'></button>
+ 			     <label class="sheet-buttonLbl">Study a Place of Power:</label>
+ 			     <button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Study a Place of Power}} {{roll_mod=[[@{circleroll}]]}} {{result=[[2d6 + @{circleroll}]]}}' name='roll_study'></button>
+				  <label class="sheet-buttonLbl">Lend a Hand/Get In the Way:</label>
+				  <button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=Lend a Hand or Get In The Way}} {{roll_mod=[[@{circleroll}]]}} {{result=[[2d6 + @{circleroll}]]}}' name='roll_lend_get'></button>
+
+        	<label class="sheet-class-moves sheet-section-title">Class Moves:</label>
+			<fieldset class="repeating_moves">
+ 			     <label class="sheet-movename">Move:</label>
+ 			     <input type="text" name="attr_classmovename" />
+ 			     <label class="sheet-stat">Stat:</label>
+			     <select name="attr_classmoves" class="sheet-moves">
+			          <option value="@{blood} - @{shattered}">Blood</option>
+			          <option value="@{heart} - @{crushed}">Heart</option>
+			          <option value="@{mind} - @{fractured}">Mind</option>
+			          <option value="@{spirit} - @{broken}">Spirit</option>
+			      </select>
+  			     <button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=@{classmovename}}} {{roll_mod=[[@{classmoves}]]}} {{result=[[2d6 + @{classmoves}]]}}' name='roll_move'></button>
+ 			     <label class="sheet-desc">Description:</label>
+					<textarea rows="4" cols="50" name="attr_classmovedesc" ></textarea>
+<!--   			   <button type='roll' value="@{name} rolls a [[2d6!]]" name='roll_move' />  -->
+			</fieldset>
+
+        	<label class="sheet-other-moves sheet-section-title">Other Moves:</label>
+			<fieldset class="repeating_othermoves">
+ 			     <label class="sheet-movename">Move:</label>
+ 			     <input type="text" name="attr_movename" />
+ 			     <label class="sheet-stat">Stat:</label>
+			     <select name="attr_moves" class="sheet-moves">
+			          <option value="@{blood} - @{shattered}">Blood</option>
+			          <option value="@{heart} - @{crushed}">Heart</option>
+			          <option value="@{mind} - @{fractured}">Mind</option>
+			          <option value="@{spirit} - @{broken}">Spirit</option>
+			      </select>
+			     <button type='roll' value='&{template:us} {{name=@{character_name}}} {{roll_name=@{movename}}} {{roll_mod=[[@{moves}]]}} {{result=[[2d6 + @{moves}]]}}' name='roll_move'></button>
+ 			     <label class="sheet-desc">Description:</label>
+  			      <textarea rows="4" cols="50" name="attr_movedesc" ></textarea>
+			</fieldset>
+			<label class="sheet-class-moves sheet-section-title">Debts</label>
+			<fieldset class="repeating_debt">
+				<input type="text" name="attr_debtname"/> owes me <input type="number" name="attr_debtamount"/> Debts for <textarea rows='4' cols='50' name="attr_debtdesc"></textarea>
+			</fieldset>
+
+		</div>
+      </div>
+
+    <!--</div>
+    <div class="sheet-2colrow">   -->
+        <div class="sheet-col">
+        <div class="sheet-box">
+
+
+
+        </div>
+			<div class="sheet-box">
+				<label class="sheet-harm sheet-section-title">A Member Of:</label>
+				<input type="text" name="attr_playercircle"/>
+
+        <!-- Class Selected -->
+        <input type="checkbox" name="attr_class" class="sheet-isaware" value='The Aware' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-isfae" value='The Fae' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-ishunter" value='The Hunter' style="display: none;" />
+		<input type="checkbox" name="attr_class" class="sheet-isimp" value='The Imp' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-isoracle" value='The Oracle' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-isspectre" value='The Spectre' style="display: none;" />
+		<input type="checkbox" name="attr_class" class="sheet-issworn" value='The Sworn' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-istainted" value='The Tainted' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-isvamp" value='The Vamp' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-isveteran" value='The Veteran' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-iswizard" value='The Wizard' style="display: none;" />
+        <input type="checkbox" name="attr_class" class="sheet-iswolf" value='The Wolf' style="display: none;" />
+        <!-- End Class Selected -->
+
+
+
+
+				<div class="sheet-aware">
+          <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/>
+  				<input type="checkbox" name="attr_corrupt2"/>
+  				<input type="checkbox" name="attr_corrupt3"/>
+  				<input type="checkbox" name="attr_corrupt4"/>
+				<input type="checkbox" name="attr_corrupt5"/><br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>In Too Deep: </b>Mark corruption to get in the way of someone from another Circle as if you rolled a 10+.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Sticky Fingers: </b>Mark corruption after meeting with a powerful NPC to reveal that you took something of import from them. Mark corruption again to conceal your role in the theft for some time.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Free Agent: </b>Mark corruption to <i>refuse to honor a Debt</i> owed to someone outside your Circle as if you rolled a 10+</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>If You Can't Beat 'Em: </b>Take one ability from a playbook from another Circle. Whenever you <i>let it out</i> and roll a 12+, mark an additional corruption.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-fae">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>Air And Darkness: </b>You gain the remaining faerie powers. When you use Faerie Magic, you may no longer choose to suffer harm.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Shrewd Negotiator: </b>When you <i>refuse to honor a Debt</i> to someone of lesser or equal Status, you may mark corruption to take a 12+ instead of rolling.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Unearthly Grace: </b>You get +1 HEART (max +4). When you roll with HEART and roll a 12+, mark corruption.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Everyone's Got One: </b>Touch someone and mark corruption to declare one of their vulnerabilities. All damage from that source (fire,steel,iron,etc) is treated as +1 harm and ap.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-hunter">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>Divided I Stand: </b>When you enter a dangerous situation alone, mark corruption to advance all your moves and take +1 ongoing to BLOOD for the scene.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Hard To Kill: </b>Mark corruption to gain armor+1 until the end of the scene.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Expecting Company: </b>Mark corruption to have a backup team of mortal hunters arrive in the scene (2-harm small 1-armor trained). Mark a second corruption for them to show up in a superior position.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Death Wish: </b>If someone nearby is about to suffer harm, you may mark corruption to suffer the harm instead.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-imp">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>This Is How I Win: </b>When you <i>put out the word</i> to your Circle that you need something, mark corruption to take a 10+ instead of rolling. Mark corruption again to have a lackey handle the deal; make an additional, different city move while they get it done.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Dirty Money: </b>When you complete a scheme, mark corruption to take all four boons instead of just two.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Sweeten The Deal: </b>When you <i>persuade an NPC</i> by offering an additional bonus or appealing bribe, mark corruption to take a 10+ instead of rolling.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>On The Shit List: </b>Mark corruption to declare someone an enemy of your people; others of your kind will gaslight, antagonize, or worse. Until you say otherwise, advance <i>mislead, distract, or trick</i> for anyone targeting them; they also take -1 ongoing during each faction turn.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-oracle">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>Empath: </b>When you <i>figure someone out</i>, <i>skim the surface</i>, or use <i>psychometry</i>, mark corruption to ask any questions you’d like, not limited to the lists.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>I, All-Seeing: </b>Mark corruption and suffer 1-harm (ap) to have a vision about the situation at hand. Ask the MC a question; they will answer it honestly. Take +1 ongoing to act on the information provided.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Dark Fate: </b>Mark corruption to curse a city faction with terrible luck; they take -1 ongoing in the next faction turn. Mark corruption again to obscure your role or ensure the curse lasts for a long time.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Eyes That Burrow: </b>Mark corruption to lock eyes with someone and force them to be still for as long as you maintain the gaze. Mark corruption again to make them forget the experience.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-spectre">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>Possession: </b>Mark corruption to possess a weak-minded person (MC’s call) in your presence; clear a trauma for each “normal” human experience —eating a meal, shopping for clothes, etc.— you engage in while controlling their body.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Telekinesis: </b>You can move and lift small objects at a distance by concentrating. Mark corruption to move an object up to the size of a car.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Nightmare: </b>Mark corruption to enter the dreams of someone sleeping in your presence. While you’re there, you can interact with them and their dreams as if they were spirits as well.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Siphon: </b>Mark corruption to reach into someone’s body, inflict 2-harm (ap) on them, and clear your harm track.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-sworn">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>Ahead Of The Game: </b>You get +1 MIND (max+4). Whenever you roll with MIND and roll a 12+, mark corruption.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Stool Pigeons: </b>Mark corruption to roll with Mind instead of the relevant Circle Status when you consult your contacts. On a miss, mark corruption again—then choose to either answer your contact’s tough question or owe them a Debt.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Student Of The Arts: </b>Choose three <i>Spells</i>. Mark corruption to gain two hold you can use to cast those spells.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Infernal Affairs: </b>When you <i>turn to violence</i>, you may mark corruption to take a 10+ instead of rolling.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-tainted">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>I'm A Hustler, Baby: </b>Mark corruption to make an additional city move when time passes; if you use your Circle Status for the move, add +1 to your roll.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Just Below the Surface: </b>Mark corruption to assume your demon form without a roll and gain all the options listed.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Not to Be Denied: </b>When someone rolls a hit while <i>refusing to honor a Debt</i> you’ve <i>cashed in</i> on them, you may mark corruption to make their roll a miss instead.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>From Hell: </b>Mark corruption to have your patron send a small gang of demons to work on your behalf for a scene (2-harm 2-armor savage demonic).</label></li>
+						</ul>
+					</div>
+					<div class="sheet-vamp">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>True Hunter: </b>Mark corruption when pursuing a vulnerable NPC at night. Your prey cannot escape you, no matter where they attempt to flee, and you can prey on them or kill them at will.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Fake News: </b>When you <i>weaken someone’s standing</i> via false rumors, mark corruption to roll with HEART instead of Status. On a miss, mark corruption to have the trail lead back to an ally, not you.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Pull Them Back In: </b>When you <i>cash in</i> your last Debt on someone in your web, mark corruption to keep the Debt and keep them in your web.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <input type="checkbox" name="attr_corruption5"/> <b>Blood Magic: </b>Choose two <i>Faerie Powers</i>; mark corruption to use one without additional costs. You may take this corruption advance a second time to gain the remaining Faerie Powers.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-veteran">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>Back At It: </b>Take two abilities from another playbook. When you <i>let it out</i> to use these abilities, you cannot choose to avoid corruption on a 10+.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Pack Rat: </b>You may mark corruption to reach into your kit and find just the gear you need to deal with your current situation.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Catch You Fuckers At A Bad Time?: </b>Mark corruption to arrive in a scene. Mark an additional corruption to bring someone willing with you.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Dark Experiments: </b>When you work over someone (alive or dead) in your <i>workshop</i>, mark corruption to ask up to two questions about their weaknesses or secrets. They must answer honestly.</label></li>
+						</ul>
+					</div>
+					<div class="sheet-wizard" style="padding-left: 20px;">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>The Dark Arts: </b>You get +1 SPIRIT (max +4). Whenever you roll with SPIRIT and roll a 12+, mark corruption.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Upon a Pale Horse: </b>Mark corruption and speak the secret name of a character in the scene to kill them; PCs cannot mark a scar to avoid this death.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Black Magic: </b>Mark corruption to ignore a requirement set by the MC when using your Sanctum.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Eldritch Blast: </b>Mark corruption to <i>turn to violence</i> with SPIRIT instead of BLOOD using raw magical force (3-harm close or 2-harm close area).</label></li>
+						</ul>
+					</div>
+					<div class="sheet-wolf">
+            <label class="sheet-harm sheet-section-title">Corruption</label>
+  				<input type="checkbox" name="attr_corrupt1"/> 
+  				<input type="checkbox" name="attr_corrupt2"/> 
+  				<input type="checkbox" name="attr_corrupt3"/> 
+  				<input type="checkbox" name="attr_corrupt4"/> 
+				<input type="checkbox" name="attr_corrupt5"/> <br><br>
+  				<ul>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption1"/> <b>One with the Beast: </b>Mark corruption when you transform to select two additional qualities or remove two existing weaknesses from your Transformation. Mark a second corruption to do both.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption2"/> <b>Force of Nature: </b>You get +1 BLOOD (max +4). Whenever you roll with BLOOD and roll a 12+, mark corruption.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption3"/> <b>Street Hound: </b>Mark corruption to transform into a coyote or dog. While in this form, you can roll with SPIRIT instead of mind to <i>figure someone out</i> or <i>mislead, distract, and trick</i> them.</label></li>
+							<li><label class="sheet-improvement"><input type="checkbox" name="attr_corruption4"/> <b>Familiar Territory: </b>Mark corruption to locate the source of the greatest danger to you or someone you select within your territory or city hub, even if the threat has concealed itself with magic or misdirection.</label></li>
+						</ul>
+					</div>
+
+
+
+   			<label class="sheet-harm sheet-section-title">Armor/Harm:</label>
+   			<b>Armor: </b><input type="text" class="sheet-armor" name="attr_armor"/><br>
+				<input type="checkbox" name="attr_sheet-harm-1" />
+				<input type="text" name="attr_faint_harm" placeholder="Faint"/><br>
+				<input type="checkbox" name="attr_sheet-harm-2" />
+				<input type="checkbox" name="attr_sheet-harm-3" />
+   			<input type="text" name="attr_grievous_harm" placeholder="Grievous"/><br>
+				<input type="checkbox" name="attr_sheet-harm-4" />
+				<input type="checkbox" name="attr_sheet-harm-5" />
+   			<input type="text" name="attr_critical_harm" placeholder="Critical"/>
+				<label class="sheet-harm sheet-section-title">Scars</label>
+				<input type="checkbox" name="attr_shattered" value="1"  /><label>Shattered(-1 Blood)</label><br />
+				<input type="checkbox" name="attr_crushed" value="1"  /><label>Crushed(-1 Heart)</label> <br />
+				<input type="checkbox" name="attr_fractured" value="1"  /><label>Fractured(-1 Mind)</label> <br />
+				<input type="checkbox" name="attr_broken" value="1"  /><label>Broken(-1 Spirit)</label>
+
+        	</div>
+
+        	<div class="sheet-box">
+
+
+        	<label class="sheet-other sheet-section-title">Other:</label>
+
+					<h3><span>Your Gear</span></h3>
+					<fieldset class="repeating_gear">
+						Item:<input type="text" name="attr_gear_name"/><br>
+						Tags:<input type="text" name="attr_gear_tags"/><br><br>
+					</fieldset>
+
+
+        	</div>
+        	<div class="sheet-box">
+        		<!-- Class Selected -->
+				<input type="checkbox" name="attr_class" class="sheet-isaware" value='The Aware' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-isfae" value='The Fae' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-ishunter" value='The Hunter' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-isimp" value='The Imp' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-isoracle" value='The Oracle' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-isspectre" value='The Spectre' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-issworn" value='The Sworn' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-istainted" value='The Tainted' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-isvamp" value='The Vamp' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-isveteran" value='The Veteran' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-iswizard" value='The Wizard' style="display: none;" />
+				<input type="checkbox" name="attr_class" class="sheet-iswolf" value='The Wolf' style="display: none;" />
+				<!-- End Class Selected -->
+
+
+
+
+				
+
+
+
+				<div class="sheet-aware">
+					<h3><span>Your Mortal Relationships</span></h3>
+					<fieldset class="repeating_relationships">
+					<input type="text" name="attr_relationship"/><br>
+					</fieldset>
+					When one of your mortal relationships comes to an end for any reason —they cut you off, they die, they leave the city, you tell them to stop contacting you, etc.— immediately mark a corruption advance. <br>
+					If losing a mortal relationship causes you to retire your character due to corruption, tell the MC whom you most blame for the loss; your character will pursue the person responsible as a Threat until “justice” is served.<br>
+				</div>
+
+
+				
+				<div class="sheet-fae">
+					<label class="sheet-powers">Faerie Powers:</label>
+					<fieldset class="repeating_faeriepowers">
+					<input type="text" name="attr_power"/><br>
+					</fieldset>
+					<label class="sheet-court">Your Court:</label>
+					<input type="text" name="attr_court"/><br>
+				</div>
+
+
+				<div class="sheet-hunter">
+					<label class="sheet-society">Your Society:</label>
+					<textarea rows="4" cols="50" name="attr_society"></textarea>
+					<label class="sheet-custom">Custom Weapons:</label>
+					<fieldset class="repeating_custweap">
+						Name/Description:<input type="text" name="attr_custname"/><br>
+						Tags:<br><input type="text" name="attr_custtags"/>
+					</fieldset>
+				</div>
+				
+				<div class="sheet-imp">
+					<h3><span>Your Establishment</span></h3>
+					Services: <input type="text" name="attr_services"/><br>
+					Investments: <input type="text" name="attr_investments"/><br>
+					Problems: <input type="text" name="attr_problems"/><br>
+					
+					<h3><span>Your Schemes</span></h3>
+					When you generate a scheme, choose a primary Circle, one of your services, and two complications—the MC will tell you what opportunity you’ve seized upon. When you accomplish a scheme, select two boons and a payout; the MC will detail how they arrive.
+					<label class="sheet-schemes">Your Schemes:</label>
+					<fieldset class="repeating_schemes">
+						Name:<input type="text" name="attr_schemename"/><br>
+						Circle:<br><input type="text" name="attr_complications"/>
+						Service:<br><input type="text" name="attr_schemeservice"/>
+						Complications:<br><input type="text" name="attr_complications"/>
+					</fieldset>
+					
+					<b>Boons: </b><br>
+					• attract new business; generate a new scheme<br>
+					• pay down your debts; cancel a Debt you owe<br>
+					• throw your weight around; take a Debt on an NPC<br>
+					• grow your reputation; mark a Circle affected by the deal<br>
+					
+					<ul>
+						<b>Payouts available at beginning of play:</b>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-1" />+1 to any Circle (max+3)</label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-2" />hire <i>Fiendish Underlings</i></label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-3" />aquire an <i>arsenal</i></label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-4" />secure a new investment</label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-5" />secure a new investment</label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-6" />resolve a problem</label></li>
+						<b>After 4+ payouts:</b>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-7" />+1 to any Circle (max+3)</label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-8" />+1 Status (max+2)</label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-9"/>aquire a <i>legendary weapon</i></label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-10" />aquire a <i>sanctum</i></label></li>
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-11" />get 2 new <i>let it out</i> abilities</label></li>							
+						<li><label class="sheet-payout"><input type="checkbox" name="attr_imp-payout-12" />retire your character to safety</label></li>
+					</ul>
+					
+				</div>
+				
+				<div class="sheet-oracle">
+					<h3><span>Your Benefactor</span></h3>
+					Name & Circle: <textarea rows="4" cols="50" name="attr_benefactor"></textarea>
+					Your Prophecy: <textarea rows="4" cols="50" name="attr_prophecy"></textarea>
+					Strengths: <textarea rows="4" cols="50" name="attr_benestrength"></textarea>
+					Flaws: <textarea rows="4" cols="50" name="attr_beneflaw"></textarea>
+				</div>
+				
+				
+				<div class="sheet-spectre">
+					<h3><span>Trauma</span></h3>
+					<input type="checkbox" name="attr_trauma1"/>
+					<input type="checkbox" name="attr_trauma2"/>
+					<input type="checkbox" name="attr_trauma3"/>
+					<input type="checkbox" name="attr_trauma4"/>
+					<input type="checkbox" name="attr_trauma5"/><br>
+					
+					Your sense of self has been shattered by your death, leaving you traumatized. You begin each session with at least 2-trauma marked, but can clear it—and any additional trauma you take— via trauma moves. If you ever fill your trauma track, the MC may call for you to make a trauma move at any time, but you may always choose which trauma move you make in the moment.<br>
+					
+					The first time you take harm in a scene, mark trauma; when you fill up on harm, your corpus is scattered. Mark trauma to reform in a few days at one of your anchors, or mark 3-trauma to reform immediately at an anchor of the MC’s choice. If you cannot mark trauma while destroyed, the MC decides how/when you reform.<br>
+					
+					<h3><span>Anchors</span></h3>
+					<fieldset class="repeating_anchors">
+					<input type="text" name="attr_anchor"/><br>
+					</fieldset>
+					When one of your anchors is put in danger, you know; mark trauma and take a +1 ongoing to all moves until you see it to safety. When you resolve an anchor, clear your trauma track and erase a corruption advance; when an anchor is destroyed or ruined, fill your trauma track and take a corruption advance.
+				</div>
+
+
+				<div class="sheet-sworn">
+					<h3><span>Your Oath</span></h3>
+					Your Masters: <input type="text" name="attr_masters"/><br>
+					You are charged with: <input type="text" name="attr_oathcharges"/><br>
+					
+					<h3><span>Your Vows</span></h3>
+					<input type="text" name="attr_vows"/><br>
+					When you break one of your vows, mark corruption. When you take a corruption advance, cross out one of your vows—it no longer binds you. If you strike out every vow, your oath is broken—change playbooks immediately.
+					
+					<h3><span>Your Legenday Weapon</span></h3>
+					<input type="text" name="attr_legweap"/><br>
+					So long as you bear this legendary armament, advance the named move. When you wield the weapon in the service of your masters, you can roll with MIND instead of SPIRIT when you <i>keep your cool</i>. But your weapon—like your oath—is bound to your loyalty. If your oath is broken, the weapon will be lost to you, even betraying you to ensure it exits your service.
+					
+					
+				</div>
+
+
+				<div class="sheet-tainted">
+					<h3><span>Your Dark Patron</span></h3>
+					<input type="text" name="attr_darkpatron"/><br>
+					At any time, your patron may cash in any Debts you owe them—1 for 1—to inflict corruption on you.
+					
+					<h3><span>Your Demon Form</span></h3>
+					<input type="text" name="attr_demonform"/><br>
+					
+					<h3><span>Demonic Jobs</span></h3>
+					<input type="text" name="attr_demonicjob-1"/><br>
+					<input type="text" name="attr_demonicjob-2"/><br>
+					
+					When you complete a job for your patron, mark Wild. Your patron owes you a Debt for every job completed. You can cash in a Debt with your Patron in order to have them: <br>
+					• answer a question honestly <br>
+					• arrange a meeting with an NPC from Wild <br>
+					• grant you a worthy boon or useful gift <br>
+					• erase a Debt they hold on you or someone else <br>
+					• give you a Debt they have on someone else <br><br>
+					
+				</div>
+
+				<div class="sheet-vamp">
+					<h3><span>Your Web</span></h3>
+					When someone comes to you to ask for a favor, look for advice/info, or threaten your interests, they enter your
+					Web and owe you a Debt. When someone is in your Web, you gain the following when dealing with them:<br>
+					• Get +1 ongoing to Lend a Hand or Get in the Way of their efforts<br>
+					• Add this question to Figure Someone Out: “What is your character’s true hunger?”<br><br>
+					
+					At the start of a session, choose someone in your Web and learn a secret about them that they’d rather keep buried.<br>
+					They leave your Web only when they no longer owe you a Debt.
+					<label class="sheet-web">Trapped in your web:</label>
+					<input type="text" name="attr_web"/><br>
+					
+					<h3><span>Your Harbor</span></h3>
+					You have a safe place—a haven—secure from outside dangers, located within a larger harbor. Your haven is a reinforced bolthole with emergency rations and an escape vector; when someone willingly enters your haven, add them to your web.<br>
+					Harbor: <textarea rows="4" cols="50" name="attr_harbor"></textarea>
+					Advantages: <textarea rows="4" cols="50" name="attr_harbadvantages"></textarea>
+					Dangers: <textarea rows="4" cols="50" name="attr_harbdangers"></textarea>
+
+				</div>
+				
+				
+				
+				
+				<div class="sheet-veteran">
+				<h3><span>Your Workshop</span></h3>
+				Resources: <textarea rows="4" cols="30" name="attr_workspaceresources"></textarea>
+				<label class="sheet-projects">Your Projects:</label>
+					<fieldset class="repeating_projects">
+						Description:<input type="text" name="attr_projectdesc"/><br>
+						Requirements:<br><input type="text" name="attr_projectreqs"/>
+					</fieldset>
+					
+				</div>
+				
+				
+				
+				
+				
+				<div class="sheet-wizard">
+					<h3><span>Your Spells</span></h3>
+					<fieldset class="repeating_spells">
+					<input type="text" name="attr_spell"/><br>
+					</fieldset>
+					
+					<h3><span>Your Sanctum</span></h3>
+					Resources: <textarea rows="4" cols="30" name="attr_sanctumresources"></textarea>
+					Downsides: <textarea rows="4" cols="30" name="attr_sanctumdownsides"></textarea>
+					<label class="sheet-schemes">Your Projects:</label>
+					<fieldset class="repeating_projects">
+						Description:<input type="text" name="attr_projectdesc"/><br>
+						Requirements:<br><input type="text" name="attr_projectreqs"/>
+					</fieldset>
+					
+					<h3><span>Your Ward</span></h3>
+					Name: <textarea rows="4" cols="30" name="attr_wardname"></textarea>
+					Who charged you?: <textarea rows="4" cols="30" name="attr_wardpatron"></textarea>
+					Why do they need protection?: <textarea rows="4" cols="30" name="attr_wardneeds"></textarea>
+					Why did you agree?: <textarea rows="4" cols="30" name="attr_wardwhys"></textarea>
+					
+				</div>
+				
+				
+				
+				<div class="sheet-wolf">
+					<h3><span>Your Territory</span></h3>
+					Tags: <textarea rows="4" cols="30" name="attr_territorytags"></textarea>
+					Perks: <textarea rows="4" cols="30" name="attr_territoryperks"></textarea>
+					Plights: <textarea rows="4" cols="30" name="attr_territoryplights"></textarea>
+					
+					
+					<h3><span>The Transformation</span></h3>
+					By default, you can change into your wolf form—at will—in the sight of the moon. <br>
+					You gain natural weaponry (2-harm), 1-armor, and all of the qualities and weaknesses you choose below:<br>
+					Qualities: <textarea rows="4" cols="30" name="attr_transformqualitys"></textarea>
+					Weaknesses: <textarea rows="4" cols="30" name="attr_transformweaknesses"></textarea>
+					
+
+				</div>
+			</div>	
+
+	</div>
+
+</div>
+<textarea name="attr_charnotes" placeholder="Use this space for your notes, hold, and anything else!"></textarea>
+</div>
+<!-- ROLL TEMPLATES -->
+<rolltemplate class="sheet-rolltemplate-us">
+    <table>
+        <tr><th colspan="2">{{name}} rolls{{#roll_name}} {{roll_name}}{{/roll_name}}{{#roll_mod}}({{roll_mod}}){{/roll_mod}}</th></tr>
+		  <tr>
+        	{{#rollGreater() result 11}}
+        		<td class="result success">{{result}}</td>
+        		<td> Succeeds{{advanced}} </td>
+        	{{/rollGreater() result 11}}
+        	{{#rollBetween() result 10 11}}
+        		<td class="result success">{{result}}</td>
+        		<td> Succeeds </td>
+        	{{/rollBetween() result 10 11}}
+        	{{#rollBetween() result 7 9}}
+        		<td class="result">{{result}}</td>
+        		<td> Succeeds partially</td>
+        	{{/rollBetween() result 7 9}}
+        	{{#rollLess() result 7}}
+        		<td class="result failure">{{result}}</td>
+        		<td> Miss </td>
+        	{{/rollLess() result 7}}
+        </tr>
+    </table>
+</rolltemplate>
+
+
+
+

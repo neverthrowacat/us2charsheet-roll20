@@ -1,0 +1,9 @@
+{
+  "html": "sheet.html",
+  "css": "style.css",
+  "authors": "Changes for Urban Shadows 2e made by neverthrowacat, previously developed Adam Brenner(@tuxtradamus), Ryan Sigg (@ryansigg), Steve K.",
+  "roll20userid": "229266,13601,5047",
+  "preview": "preview.png",
+  "instructions": "Version: 2.0 - Updated with Core 2e playbooks. Select your class, then check 'Lock/Unlock Class'. Drama Moves, improvements, corruption, and special playbook features will appear, then simply fill everything out per the Character Creation in the Playbook.",
+  "legacy": true
+}
